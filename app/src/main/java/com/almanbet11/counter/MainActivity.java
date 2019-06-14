@@ -27,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void display(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.number_text_view);
-        quantityTextView.setText(String.format("%03d", number));
+        if(number < 0){
+            quantityTextView.setText(String.format("%04d", number));
+        }
+        else{
+            quantityTextView.setText(String.format("%03d", number));
+        }
     }
 }
